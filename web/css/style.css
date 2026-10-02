@@ -1,0 +1,462 @@
+/* ==========================================================================
+   Campus Connect - Clean, Modern, Professional Intranet Design System
+   Color Palette:
+   - Primary: #2563EB (Royal Blue)
+   - Primary Hover: #1D4ED8
+   - Dark: #0F172A, #1E293B
+   - Body Background: #F8FAFC
+   - Card Background: #FFFFFF
+   - Border: #E2E8F0
+   - Text Primary: #1E293B
+   - Text Muted: #64748B
+   ========================================================================== */
+
+:root {
+    --cc-primary: #2563eb;
+    --cc-primary-hover: #1d4ed8;
+    --cc-primary-soft: #eff6ff;
+    --cc-dark: #0f172a;
+    --cc-slate: #1e293b;
+    --cc-gray-bg: #f8fafc;
+    --cc-card-bg: #ffffff;
+    --cc-border: #e2e8f0;
+    --cc-text-main: #1e293b;
+    --cc-text-muted: #64748b;
+    --cc-success: #16a34a;
+    --cc-warning: #f59e0b;
+    --cc-danger: #dc2626;
+    --cc-info: #0284c7;
+    --cc-radius: 10px;
+    --cc-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --cc-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+body {
+    background-color: var(--cc-gray-bg);
+    color: var(--cc-text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+.cc-navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--cc-border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    padding: 0.75rem 1.5rem;
+}
+
+.cc-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cc-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+}
+
+.cc-brand-badge {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    padding: 0.25rem 0.55rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   Dashboard Shell & Sidebar
+   ========================================================================== */
+.dashboard-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid var(--cc-border);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-heading {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: var(--cc-text-muted);
+    padding: 0 0.75rem 0.5rem 0.75rem;
+    margin-top: 1rem;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 0.3rem;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.85rem;
+    color: #475569;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.15s ease-in-out;
+}
+
+.sidebar-nav a:hover {
+    background-color: var(--cc-primary-soft);
+    color: var(--cc-primary);
+}
+
+.sidebar-nav a.active {
+    background-color: var(--cc-primary);
+    color: #ffffff;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    overflow-y: auto;
+}
+
+@media (max-width: 992px) {
+    .dashboard-wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--cc-border);
+        padding: 1rem;
+    }
+    .main-content {
+        padding: 1.25rem;
+    }
+}
+
+/* ==========================================================================
+   Stat & Metrics Cards
+   ========================================================================== */
+.stat-card {
+    background: #ffffff;
+    border: 1px solid var(--cc-border);
+    border-radius: var(--cc-radius);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--cc-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--cc-shadow-lg);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--cc-dark);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--cc-text-muted);
+    margin-top: 0.35rem;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+}
+
+.stat-icon-blue { background: #dbeafe; color: #1e40af; }
+.stat-icon-amber { background: #fef3c7; color: #b45309; }
+.stat-icon-purple { background: #f3e8ff; color: #6b21a8; }
+.stat-icon-green { background: #dcfce7; color: #15803d; }
+.stat-icon-gray { background: #f1f5f9; color: #475569; }
+
+/* ==========================================================================
+   Content Cards & Containers
+   ========================================================================== */
+.portal-card {
+    background: #ffffff;
+    border: 1px solid var(--cc-border);
+    border-radius: var(--cc-radius);
+    box-shadow: var(--cc-shadow);
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+}
+
+.portal-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--cc-border);
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.portal-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--cc-dark);
+    margin: 0;
+}
+
+/* ==========================================================================
+   Custom Table Styling
+   ========================================================================== */
+.cc-table {
+    margin-bottom: 0;
+}
+
+.cc-table th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--cc-border);
+    padding: 0.85rem 1rem;
+    white-space: nowrap;
+}
+
+.cc-table td {
+    padding: 0.95rem 1rem;
+    vertical-align: middle;
+    color: #334155;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.cc-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   Visual Complaint Status Timeline (5 Stages)
+   Submitted -> Assigned -> In Progress -> Resolved -> Closed
+   ========================================================================== */
+.timeline-container {
+    padding: 1.5rem 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.timeline-steps::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    right: 40px;
+    height: 4px;
+    background: #e2e8f0;
+    z-index: 1;
+}
+
+.timeline-step {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    flex: 1;
+}
+
+.timeline-node {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid #cbd5e1;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem auto;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+.timeline-step.completed .timeline-node {
+    background: #16a34a;
+    border-color: #16a34a;
+    color: #ffffff;
+}
+
+.timeline-step.active .timeline-node {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 0 0 4px #dbeafe;
+}
+
+.timeline-step.rejected .timeline-node {
+    background: #dc2626;
+    border-color: #dc2626;
+    color: #ffffff;
+}
+
+.timeline-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.timeline-step.completed .timeline-label,
+.timeline-step.active .timeline-label {
+    color: #0f172a;
+}
+
+/* ==========================================================================
+   Badges & Tags
+   ========================================================================== */
+.badge-status {
+    padding: 0.4em 0.75em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.badge-pending { background-color: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.badge-assigned { background-color: #e0f2fe; color: #075985; border: 1px solid #bae6fd; }
+.badge-in-progress { background-color: #f3e8ff; color: #6b21a8; border: 1px solid #e9d5ff; }
+.badge-resolved { background-color: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+.badge-closed { background-color: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; }
+.badge-rejected { background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+.badge-urgent { background-color: #ef4444; color: #ffffff; }
+.badge-high { background-color: #f97316; color: #ffffff; }
+.badge-medium { background-color: #3b82f6; color: #ffffff; }
+.badge-low { background-color: #64748b; color: #ffffff; }
+
+/* ==========================================================================
+   Star Rating Component
+   ========================================================================== */
+.star-rating {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    gap: 0.25rem;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 1.75rem;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #f59e0b;
+}
+
+/* ==========================================================================
+   Hero & Landing Page
+   ========================================================================== */
+.hero-section {
+    background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+    border-bottom: 1px solid var(--cc-border);
+    padding: 4.5rem 1.5rem;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--cc-dark);
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--cc-text-muted);
+    max-width: 680px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+
+.hero-btn {
+    padding: 0.85rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.feature-box {
+    background: #ffffff;
+    border: 1px solid var(--cc-border);
+    border-radius: var(--cc-radius);
+    padding: 2rem;
+    height: 100%;
+    box-shadow: var(--cc-shadow);
+    transition: transform 0.2s;
+}
+
+.feature-box:hover {
+    transform: translateY(-3px);
+}
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--cc-primary-soft);
+    color: var(--cc-primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Footer */
+.cc-footer {
+    background-color: #ffffff;
+    border-top: 1px solid var(--cc-border);
+    padding: 1.5rem 0;
+    color: var(--cc-text-muted);
+    font-size: 0.875rem;
+    margin-top: auto;
+}

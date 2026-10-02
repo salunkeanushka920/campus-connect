@@ -1,0 +1,20 @@
+# NetBeans user-specific configuration
+**/nbproject/private/
+
+# Compiled Java class files
+*.class
+web/WEB-INF/classes/
+
+# NetBeans / Ant build output directories
+build/
+nbbuild/
+dist/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
